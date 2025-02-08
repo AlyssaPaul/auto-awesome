@@ -6,14 +6,17 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class MainPage {
-    @FindBy(css = "a.wt-button_mode_primary")
-    public WebElement seeAllToolsButton;
+    @FindBy(css = "[data-testid='price-component-value']")
+    public WebElement retailPrice;
 
-    @FindBy(css = "nav > [data-test-marker=\"Developer Tools\"]")
-    public WebElement toolsMenu;
+    @FindBy(css = "#purchase-buttons-and-options-container > section > div > label:nth-child(2) > div.PurchaseRadioButton_priceButtonContainer__AMVCb > div > div")   
+    public WebElement vipPrice;
+    
+    @FindBy(css = "#purchase-buttons-and-options-container > section > div > label:nth-child(3) > div.PurchaseRadioButton_priceButtonContainer__AMVCb > div > div")   
+    public WebElement ambPrice;
 
-    @FindBy(css = "[data-test='site-header-search-action']")
-    public WebElement searchButton;
+    @FindBy(css = "#__next > div > header > nav > div.MuiGrid-root.MuiGrid-container.css-1lizpo9 > div.MuiGrid-root.MuiGrid-container.MuiGrid-item.css-10p3pq5 > a > div > div > span > img")  
+    public WebElement logo;
 
     public MainPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
